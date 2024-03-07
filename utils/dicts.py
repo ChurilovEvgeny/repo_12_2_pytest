@@ -1,2 +1,5 @@
 def get_val(collection, key, default='git'):
-    pass
+    if not isinstance(collection, dict):
+        raise TypeError
+
+    return collection.setdefault(key, default)
